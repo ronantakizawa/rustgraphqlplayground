@@ -38,7 +38,7 @@ pub struct QueryRoot;
 #[juniper::object]
 impl QueryRoot {
   fn members() -> Vec<Member> {
-    let mut file = File::open("/Users/ronantakizawa/Documents/Personal CS projects/rust/rustpractice/src/data.json").expect("Could not read file");
+    let mut file = File::open("./data.json").expect("Could not read file");
     let mut contents = String::new();
     file.read_to_string(&mut contents).expect("Could not read file");
     let data:Value = serde_json::from_str(&contents).expect("Could not read file");
